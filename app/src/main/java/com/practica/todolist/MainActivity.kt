@@ -22,11 +22,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
-
+                    //escribir funcion (main app posiblemente)
                 }
             }
         }
     }
 }
 
+@Composable
+fun MainApp(){
+    //Escribir
+}
+
+
+@Preview (showSystemUi = true)
+@Composable
+fun MainAppView(){
+    //poner funcion a ver en preview (main app posiblemente)
+}
