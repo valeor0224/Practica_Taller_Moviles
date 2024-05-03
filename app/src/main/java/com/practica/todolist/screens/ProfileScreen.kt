@@ -9,19 +9,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 
-
 @Composable
-fun MainScreen(){
+fun ProfileScreen(){
     Box(modifier = Modifier
         .fillMaxSize(),
         contentAlignment = Alignment.Center
     ){
         Text(
-            text = "Main Screen",
+            text = "Profile Screen",
             fontFamily = FontFamily.SansSerif,
             fontSize = 22.sp
         )
     }
 }
-
-
