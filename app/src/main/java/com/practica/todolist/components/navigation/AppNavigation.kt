@@ -102,9 +102,11 @@ fun AppNavigation() {
             composable(route=ScreenRoutes.AddTaskScreen.route){
                 AddTaskScreen(navController, myList= myList)
             }
-            composable(route=ScreenRoutes.EditTaskScreen.route){
-                EditTaskScreen(navController, myList = myList, 1 )
+            composable(route = ScreenRoutes.EditTaskScreen.route + "/{index}") { backStackEntry ->
+                val index = backStackEntry.arguments?.getString("index")?.toIntOrNull() ?: -1
+                EditTaskScreen(navController, index, myList = myList)
             }
+
 
         }
 

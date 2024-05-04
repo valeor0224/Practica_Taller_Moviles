@@ -17,9 +17,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.practica.todolist.components.navigation.ScreenRoutes
 
@@ -28,12 +26,12 @@ import com.practica.todolist.components.navigation.ScreenRoutes
 fun MainScreen(
     navController: NavController,
     myList: MutableState<List<String>>
-)
-{
-    Box(modifier = Modifier
-        .fillMaxSize(),
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
         contentAlignment = Alignment.Center
-    ){
+    ) {
         LazyColumn {
             // Display task details
             items(myList.value.size) { index ->
@@ -46,11 +44,13 @@ fun MainScreen(
                 ) {
                     Text(
                         text = item,
-                        modifier=Modifier
+                        modifier = Modifier
                             .padding(10.dp)
                     )
                     Button(
-                        onClick = { navController.navigate(ScreenRoutes.EditTaskScreen.route) },
+                        onClick = { // Provide a valid route with the index value
+                            navController.navigate("${ScreenRoutes.EditTaskScreen.route}/$index")
+                        },
                         colors = ButtonDefaults.buttonColors(Color.Red)
                     ) {
                         Icon(Icons.Default.Edit, contentDescription = "Edit")
