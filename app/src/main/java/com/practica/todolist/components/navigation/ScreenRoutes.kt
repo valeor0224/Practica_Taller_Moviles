@@ -5,5 +5,6 @@ sealed class ScreenRoutes(var route: String) {
     object  ProfileScreen : ScreenRoutes("profile")
     object  SettingsScreen : ScreenRoutes("settings")
     object AddTaskScreen: ScreenRoutes("add_task")
+    object EditTaskScreen:ScreenRoutes("edit_task")
 }
 

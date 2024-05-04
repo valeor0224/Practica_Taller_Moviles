@@ -31,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 import com.practica.todolist.model.myList
 import com.practica.todolist.screens.AddTaskScreen
+import com.practica.todolist.screens.EditTaskScreen
 
 @Composable
 fun AppNavigation() {
@@ -90,7 +91,7 @@ fun AppNavigation() {
                 .padding(paddingValues)
         ) {
             composable(route = ScreenRoutes.MainScreen.route) {
-                MainScreen(myList= myList)
+                MainScreen(navController, myList= myList)
             }
             composable(route = ScreenRoutes.ProfileScreen.route) {
                 ProfileScreen()
@@ -100,6 +101,9 @@ fun AppNavigation() {
             }
             composable(route=ScreenRoutes.AddTaskScreen.route){
                 AddTaskScreen(navController, myList= myList)
+            }
+            composable(route=ScreenRoutes.EditTaskScreen.route){
+                EditTaskScreen(navController, myList = myList, 1 )
             }
 
         }

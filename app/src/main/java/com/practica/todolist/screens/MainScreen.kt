@@ -20,10 +20,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.practica.todolist.components.navigation.ScreenRoutes
 
 
 @Composable
-fun MainScreen(myList: MutableState<List<String>>){
+fun MainScreen(
+    navController: NavController,
+    myList: MutableState<List<String>>
+)
+{
     Box(modifier = Modifier
         .fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -44,7 +50,7 @@ fun MainScreen(myList: MutableState<List<String>>){
                             .padding(10.dp)
                     )
                     Button(
-                        onClick = { /* Handle button click here */ },
+                        onClick = { navController.navigate(ScreenRoutes.EditTaskScreen.route) },
                         colors = ButtonDefaults.buttonColors(Color.Red)
                     ) {
                         Icon(Icons.Default.Edit, contentDescription = "Edit")
