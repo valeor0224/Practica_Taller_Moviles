@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //escribir funcion (main app posiblemente)
-
+                    AppNavigation()
                 }
             }
         }

@@ -28,6 +28,8 @@ import androidx.compose.runtime.getValue
 
 // for a `var` variable also add
 import androidx.compose.runtime.setValue
+import androidx.navigation.NavController
+import com.practica.todolist.screens.AddTaskScreen
 
 @Composable
 fun AppNavigation() {
@@ -72,7 +74,7 @@ fun AppNavigation() {
             // Show the FAB only on the home screen
             if (currentRoute == "home") {
                 FloatingActionButton(
-                    onClick = { /* Handle FAB click here */ }
+                    onClick = {navController.navigate(ScreenRoutes.AddTaskScreen.route)}
                 ) {
                     Icon(Icons.Default.Add, contentDescription = "Add")
                 }
@@ -94,6 +96,9 @@ fun AppNavigation() {
             }
             composable(route = ScreenRoutes.SettingsScreen.route) {
                 SettingsScreen()
+            }
+            composable(route=ScreenRoutes.AddTaskScreen.route){
+                AddTaskScreen(navController)
             }
 
         }
